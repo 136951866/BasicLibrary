@@ -1,6 +1,6 @@
 //
 //  HankToolMacros.h
-//  HankYingKe
+//  Hank
 //
 //  Created by Hank on 2017/6/30.
 //  Copyright © 2017年 Hank. All rights reserved.
@@ -8,6 +8,9 @@
 
 #ifndef HankToolMacros_h
 #define HankToolMacros_h
+
+// RGB颜色
+#define HANKColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 /** 弱强应用 */
 #define HANKWEAKSELF typeof(self) __weak weakSelf = self;
