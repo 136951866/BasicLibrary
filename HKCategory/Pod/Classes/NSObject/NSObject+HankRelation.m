@@ -7,7 +7,7 @@
 //
 
 #import "NSObject+HankRelation.h"
-
+#import <objc/runtime.h>
 @implementation NSObject (HankRelation)
 
 +(instancetype)hk_instance{
