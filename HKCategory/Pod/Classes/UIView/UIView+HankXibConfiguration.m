@@ -8,6 +8,7 @@
 
 #import "UIView+HankXibConfiguration.h"
 #import "UIColor+HankHexString.h"
+#import <objc/runtime.h>
 
 @implementation UIView (HankXibConfiguration)
 
