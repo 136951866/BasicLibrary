@@ -19,6 +19,7 @@
 #import "UIView+HankFrame.h"
 #import "UIView+HankSubview.h"
 #import "UIView+HankXibConfiguration.h"
+#import "UIBarButtonItem+HankExtension.h"
 
 
 #endif /* HKCategoryHeader_h */

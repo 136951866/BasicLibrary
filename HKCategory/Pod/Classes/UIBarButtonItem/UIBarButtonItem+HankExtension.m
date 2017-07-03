@@ -7,6 +7,7 @@
 //
 
 #import "UIBarButtonItem+HankExtension.h"
+#import "UIView+HankFrame.h"
 
 #define FONT_BBI [UIFont systemFontOfSize:16]
 #define kSpaceText -6.0f
