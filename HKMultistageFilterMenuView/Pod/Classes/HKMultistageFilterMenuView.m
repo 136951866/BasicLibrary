@@ -68,7 +68,7 @@ NSString *const HKMultistageFilterMenuViewCellID = @"CELL";
  *  调整表视图的位置、大小
  */
 - (void)adjustTableViews{
-    int w = _superView.width;
+    int w = _superView.frame.size.width;
     int __block showTableCount = 0;
     [_tables enumerateObjectsUsingBlock:^(UITableView *t, NSUInteger idx, BOOL *stop) {
         CGRect rect = t.frame;
@@ -132,8 +132,8 @@ NSString *const HKMultistageFilterMenuViewCellID = @"CELL";
     CGRect showFrame = view.frame;
     CGFloat x = 0.f;
     CGFloat y = showFrame.origin.y+showFrame.size.height ;
-    CGFloat w = _superView.width;
-    CGFloat h = _superView.height -y - kHKMultistageFilterMenuViewMargin;
+    CGFloat w = _superView.frame.size.width;
+    CGFloat h = _superView.frame.size.height -y - kHKMultistageFilterMenuViewMargin;
     self.frame = CGRectMake(x, y, w, h+ kHKMultistageFilterMenuViewMargin);
     _bgView.frame = CGRectMake(x, 0, w, h);
     _bgbackView.frame = CGRectMake(x, 0, w, h + kHKMultistageFilterMenuViewMargin);
