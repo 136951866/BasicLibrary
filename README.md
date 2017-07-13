@@ -1,17 +1,24 @@
-# 使用
+## 使用
 - 在Podfile 添加 source 'https://github.com/CocoaPods/Specs.git' 和 source 'https://github.com/136951866/SpecsRepo.git' 路径
-- pod 项目 （）
-# 项目介绍
-## HKCategory 各种常用的分类
-##  HKTool  各种常用的工具
-    - HankToolMacros 工具宏
-    - HKPhotoTool  选择单张图片
-## HKMultistageFilterMenuView 四级筛选菜单
+- pod 项目 （eg:pod 'HKCategory','~> 1.0.5'）
+## 项目介绍
+- HKCategory 各种常用的分类
+- HKTool  各种常用的工具
+    * HankToolMacros 工具宏
+    * HKPhotoTool  选择单张图片
+- HKMultistageFilterMenuView 四级筛选菜单
 
-# 用cocopod管理项目
-## 1.在git上开2个仓库
-- https://github.com/136951866/SpecsRepo 放配置文件
-- https://github.com/136951866/BasicLibrary 放源文件
+
+
+---
+    
+---
+
+
+## 用cocopod管理项目
+### 1.在git上开2个仓库
+* https://github.com/136951866/SpecsRepo 放配置文件
+* https://github.com/136951866/BasicLibrary 放源文件
 
 ## 2.在本地创建2个文件夹SpecsRepo/ BasicLibrary（可自定义）
 - SpecsRepo 放配置文件
