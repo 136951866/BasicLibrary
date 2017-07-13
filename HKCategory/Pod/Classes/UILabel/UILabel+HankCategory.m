@@ -7,6 +7,9 @@
 //
 
 #import "UILabel+HankCategory.h"
+#import <objc/runtime.h>
+#import "UIView+HankFrame.h"
+#import "UIColor+HankHexString.h"
 
 @implementation UILabel (HankCategory)
 
