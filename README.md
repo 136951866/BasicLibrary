@@ -1,15 +1,26 @@
-#用cocopod管理项目
-##1.在git上开2个仓库
-https://github.com/136951866/SpecsRepo 放配置文件
-https://github.com/136951866/BasicLibrary 放源文件
+# 使用
+- 在Podfile 添加 source 'https://github.com/CocoaPods/Specs.git' 和 source 'https://github.com/136951866/SpecsRepo.git' 路径
+- pod 项目 （）
+# 项目介绍
+## HKCategory 各种常用的分类
+##  HKTool  各种常用的工具
+    - HankToolMacros 工具宏
+    - HKPhotoTool  选择单张图片
+## HKMultistageFilterMenuView 四级筛选菜单
 
-##2.在本地创建2个文件夹SpecsRepo/ BasicLibrary（可自定义）
-SpecsRepo 放配置文件
-Specs－项目名称－版本－.podspec
-BasicLibrary放源文件
-项目名称－Pod－Classes（.m.h）/Assets(图片)－其他一些目录
+# 用cocopod管理项目
+## 1.在git上开2个仓库
+- https://github.com/136951866/SpecsRepo 放配置文件
+- https://github.com/136951866/BasicLibrary 放源文件
 
-##3.用ruby编写.podspec
+## 2.在本地创建2个文件夹SpecsRepo/ BasicLibrary（可自定义）
+- SpecsRepo 放配置文件
+- Specs－项目名称－版本－.podspec
+- BasicLibrary放源文件
+- 项目名称－Pod－Classes（.m.h）/Assets(图片)－其他一些目录
+
+## 3.用ruby编写.podspec
+```
 Pod::Spec.new do |s|
 s.name = 'Common'
 s.version = '1.0.2'
@@ -30,9 +41,12 @@ s.subspec '其他目录' do |自定义|
 end
 s.requires_arc = true
 end
+```
 
-##4.把BasicLibrary打tag上传到git上要对应pod spec的SpecsRepo版本文件夹的版本
+## 4.把BasicLibrary打tag上传到git上要对应pod spec的SpecsRepo版本文件夹的版本
+```
 git add .
 git commit -m "版本8"
 git tag -m "version "版本" 版本
 git push --tag
+```
