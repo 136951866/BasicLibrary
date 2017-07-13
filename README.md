@@ -7,7 +7,7 @@
     * HankToolMacros 工具宏
     * HKPhotoTool  选择单张图片
 - HKMultistageFilterMenuView 四级筛选菜单
-
+- HKZoomFlowView 居中变大自动无限轮播视图
 
 
 ---
