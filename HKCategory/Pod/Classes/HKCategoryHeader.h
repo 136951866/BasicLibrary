@@ -21,5 +21,6 @@
 #import "UIView+HankXibConfiguration.h"
 #import "UIBarButtonItem+HankExtension.h"
 #import "UILabel+HankCategory.h"
+#import "NSString+HankCategory.h"
 
 #endif /* HKCategoryHeader_h */

@@ -187,7 +187,29 @@ NSString *const HKMultistageFilterMenuViewCellID = @"CELL";
     NSInteger __block count;
     [_tables enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if(obj == tableView) {
-            count = [_delegate assciationMenuView:self countForClass:idx];
+            switch (idx) {
+                case 0:{
+                    count = [_delegate assciationMenuView:self countForClass:idx];
+                }
+                    break;
+                case 1:{
+                    count = [_delegate assciationMenuView:self countForClass:idx class_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row];
+                }
+                    break;
+                case 2:{
+                    count = [_delegate assciationMenuView:self countForClass:idx class_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class_2:((UITableView*)_tables[1]).indexPathForSelectedRow.row];
+                }
+                    break;
+                case 3:{
+                    count = [_delegate assciationMenuView:self countForClass:idx class_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row  class_2:((UITableView*)_tables[1]).indexPathForSelectedRow.row  class_3:((UITableView*)_tables[2]).indexPathForSelectedRow.row];
+                }
+                    break;
+                    
+                default:
+                    count = 0;
+                    break;
+            }
+//            count = [_delegate assciationMenuView:self countForClass:idx];
             *stop = YES;
         }
     }];

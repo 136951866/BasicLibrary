@@ -15,7 +15,15 @@
  *  获取第class级菜单的数据数量
  *  @return 第class级菜单的数据数量
  */
+//0
 - (NSInteger)assciationMenuView:(HKMultistageFilterMenuView*)asView countForClass:(NSInteger)idx;
+//1 idx_1 第一级那个选中
+- (NSInteger)assciationMenuView:(HKMultistageFilterMenuView*)asView countForClass:(NSInteger)idx  class_1:(NSInteger)idx_1;
+//2 idx_1 第一级那个选中
+- (NSInteger)assciationMenuView:(HKMultistageFilterMenuView*)asView countForClass:(NSInteger)idx  class_1:(NSInteger)idx_1 class_2:(NSInteger)idx_2;
+//3 idx_1 第一级那个选中
+- (NSInteger)assciationMenuView:(HKMultistageFilterMenuView*)asView countForClass:(NSInteger)idx  class_1:(NSInteger)idx_1 class_2:(NSInteger)idx_2 class_3:(NSInteger)idx_3;
+
 
 /**
  *  获取第一级菜单选项的title
