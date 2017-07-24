@@ -7,6 +7,7 @@
 //
 
 #import "HKMultistageFilterMenuView.h"
+#import "HKFilterMenuCell.h"
 
 #define kHKMultistageFilterMenuViewMargin (([[UIScreen mainScreen] bounds].size.height)/2)
 NSString *const HKMultistageFilterMenuViewCellID = @"CELL";
@@ -45,7 +46,8 @@ NSString *const HKMultistageFilterMenuViewCellID = @"CELL";
         // 初始化菜单
         _tables = @[[[UITableView alloc] init], [[UITableView alloc] init], [[UITableView alloc] init] ,[[UITableView alloc] init]];
         [_tables enumerateObjectsUsingBlock:^(UITableView *table, NSUInteger idx, BOOL *stop) {
-            [table registerClass:[UITableViewCell class] forCellReuseIdentifier:HKMultistageFilterMenuViewCellID ];
+//            [table registerClass:[UITableViewCell class] forCellReuseIdentifier:HKMultistageFilterMenuViewCellID ];
+            [table registerNib:[UINib nibWithNibName:NSStringFromClass([HKFilterMenuCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HKFilterMenuCell class])];
             table.dataSource = self;
             table.delegate = self;
             table.frame = CGRectMake(0, 0, 0, 0);
@@ -169,16 +171,20 @@ NSString *const HKMultistageFilterMenuViewCellID = @"CELL";
 #pragma mark UITableViewDateSourceDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HKMultistageFilterMenuViewCellID];
-    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    HKFilterMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HKFilterMenuCell class]) forIndexPath:indexPath];
+    cell.lblTitle.adjustsFontSizeToFitWidth = YES;
     if(tableView == [_tables objectAtIndex:0]){
-        cell.textLabel.text = [_delegate assciationMenuView:self titleForClass_1:indexPath.row];
+        cell.lblTitle.text = [_delegate assciationMenuView:self titleForClass_1:indexPath.row];
+        cell.imgNext.hidden = ![_delegate assciationMenuView:self idxChooseInClass1:indexPath.row];
     }else if(tableView == [_tables objectAtIndex:1]){
-        cell.textLabel.text = [_delegate assciationMenuView:self titleForClass_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class_2:indexPath.row];
+        cell.lblTitle.text = [_delegate assciationMenuView:self titleForClass_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class_2:indexPath.row];
+        cell.imgNext.hidden  = ![_delegate assciationMenuView:self idxChooseInClass1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class2:indexPath.row];
     }else if(tableView == [_tables objectAtIndex:2]){
-        cell.textLabel.text = [_delegate assciationMenuView:self titleForClass_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class_2:((UITableView*)_tables[1]).indexPathForSelectedRow.row class_3:indexPath.row];
+        cell.lblTitle.text = [_delegate assciationMenuView:self titleForClass_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class_2:((UITableView*)_tables[1]).indexPathForSelectedRow.row class_3:indexPath.row];
+        cell.imgNext.hidden  = ![_delegate assciationMenuView:self idxChooseInClass1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class2:((UITableView*)_tables[1]).indexPathForSelectedRow.row class3:indexPath.row];
     }else if(tableView == [_tables objectAtIndex:3]){
-        cell.textLabel.text = [_delegate assciationMenuView:self titleForClass_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class_2:((UITableView*)_tables[1]).indexPathForSelectedRow.row class_3:((UITableView*)_tables[2]).indexPathForSelectedRow.row class_4:indexPath.row];
+        cell.lblTitle.text = [_delegate assciationMenuView:self titleForClass_1:((UITableView*)_tables[0]).indexPathForSelectedRow.row class_2:((UITableView*)_tables[1]).indexPathForSelectedRow.row class_3:((UITableView*)_tables[2]).indexPathForSelectedRow.row class_4:indexPath.row];
+        cell.imgNext.hidden  = YES;
     }
     return cell;
 }
