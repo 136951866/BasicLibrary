@@ -273,6 +273,9 @@ NSString *const HKMultistageFilterMenuViewCellID = @"CELL";
             if(t2.superview) {
                 [t2 removeFromSuperview];
             }
+            if(t3.superview) {
+                [t3 removeFromSuperview];
+            }
             [self saveSels];
             [self cancel];
         }
